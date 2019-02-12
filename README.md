@@ -1,24 +1,13 @@
-## Air-light - A minimalist WordPress starter theme
+## air-kmd - A minimalist WordPress starter theme
 
-[![Build Status](https://img.shields.io/travis/digitoimistodude/air-light.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air-light) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg?style=flat-square)](https://github.com/digitoimistodude/air-light/releases) [![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg?style=flat-square)]()
 
-Air-light (or simply *Air*) is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s](https://github.com/automattic/_s).
+Based on Air project
+
+air-light (or simply *Air*) is modesigned from air-light to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s](https://github.com/automattic/_s).
 
 ## [Demo](https://dudetest.xyz/air)
 
-- **CSS gzipped:** 12 KB *(113 KB original)*
-- **JS gzipped:** 3.4 KB *(10.8 KB original)*
-- **Front page HTML**: 7.4 KB *(29.4 KB original)*
-
-![](https://www.dude.fi/air-4.0.0-screenshot.png "Screenshot")
-
 This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
-
-Air was renamed to air-light in version 3.7.8 (March 20th, 2018), because *air* was already taken in the official WordPress theme directory.
-
-### Official, approved, accessibility-ready!
-
-Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://wordpress.org/themes/air-light/) on June 4, 2018. But please note, all changes you do to the theme without generating your own or changing textdomain will be overridden in theme updates - so if you use this theme as a starting point, please follow instructions and/or replace the textdomain with your own.
 
 ## Table of contents
 
@@ -44,14 +33,6 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 9. [Debuggers](#debuggers)
 10. [Notes](#notes)
 
-### Please note before using
-
-Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning. Please also see [Debuggers](#debuggers)!
-
-Air is not meant to be "a theme for everyone", so it doesn't have many parts that are generally included (see [Disabled features](#disabled-features)).
-
-If you for some reason happen to use this theme as base, please note the theme won't necessarily be that much fun or won't necessarily look any good. I recommend using [Sage](https://roots.io/sage/) if you need something more complete.
-
 ### License
 
 Air is licensed with [The MIT License (MIT)](http://choosealicense.com/licenses/mit/) which means you can freely use this theme commercially or privately, modify it, or distribute it, but you are forbidden to hold Dude liable for anything, or claim that what you do with this is made by us.
@@ -65,8 +46,22 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * All good things from the latest [Underscores](https://github.com/Automattic/_s)
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
-* [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include column(1/100)`
-* Beta: Mixin for CSS Grid, for example `@include grid(3)` is 1 of third. See more: [sass/base/_helpers.scss](https://github.com/digitoimistodude/air/blob/master/sass/base/_helpers.scss).
+* REMOVED [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include column(1/100)`
+*
+* Sass toolset
+* Bourbon - https://github.com/thoughtbot/bourbon
+* To install, on the command line run, sudo gem install bourbon
+* bourbon install --path my/path
+
+* Neat - A lightweight and flexible Sass grid https://github.com/thoughtbot/neat
+* To install, on the command line run, sudo gem install neat
+* neat install --path my/path
+
+* Bitters -  Scaffold styles, variables and structure for Bourbon projects https://github.com/thoughtbot/bitters
+* To install, on the command line run, sudo gem install bitters
+* bitters install --path my/path
+*
+
 * Flexbox-ready
 * CSS Grid-ready*
 * Container div inside site-main
@@ -178,7 +173,7 @@ Please note: If you want to change the background to lighter, you will need to e
 
 #### WooCommerce support
 
-Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air-light/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
+Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air-kmd/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
 
 ##### How to enable
 
@@ -206,7 +201,7 @@ Traditional way:
 
 1. Git clone or download zip
 2. Open Terminal and run `npm install`
-3. Open project to Atom (or your preferred editor) and run search and replace air-light => yourprojectname
+3. Open project to Atom (or your preferred editor) and run search and replace air-kmd => yourprojectname
 4. Run `gulp watch` and start coding
 
 If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
@@ -232,21 +227,21 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 2. `cd ~/Projects/dudestack && sh setup.sh`
 3. Run `createproject`, name project after *airdev* when asked
 4. Wait for the project to be created (get a coffee, first time can take couple of minutes)
-5. Create a fork of air-light
+5. Create a fork of air-kmd
 6. `cd ~/Projects/airdev/content/themes`
-7. Fetch your fork with `git clone git@github.com:yourusername/air-light.git` (remember to replace yourusername with your actual username)
-8. `cd ~/Projects/airdev/content/themes/air-light`
+7. Fetch your fork with `git clone git@github.com:yourusername/air-kmd.git` (remember to replace yourusername with your actual username)
+8. `cd ~/Projects/airdev/content/themes/air-kmd`
 9. Get air dependencides by running `npm install` (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get a coffee)
-11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
-12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air-light` if you have Sublime Text.
-13. Go to back to air-light dir with `cd ~/Projects/airdev/content/themes/air-light` and then run `gulp watch` and start developing!
+11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-kmd` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
+12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air-kmd` if you have Sublime Text.
+13. Go to back to air-kmd dir with `cd ~/Projects/airdev/content/themes/air-kmd` and then run `gulp watch` and start developing!
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for OS X lemp stack or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for marlin-vagrant to get to use wp-cli with simply `wp`.
 
 ##### 2. Use your own stack
 
-To install air-light to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
+To install air-kmd to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
 
 When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
 
@@ -261,7 +256,7 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [scss-lint](https://github.com/brigade/scss-lint) built inside gulpfile.js. **Please note, you need to configure these separately!**
+air-kmd comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [scss-lint](https://github.com/brigade/scss-lint) built inside gulpfile.js. **Please note, you need to configure these separately!**
 
 PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
 
@@ -270,4 +265,4 @@ PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPre
 
 Gzip file sizes tested with `wc -c css/global.css` and `gzip -c css/global.css | wc -c` commands.
 
-**Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside theme directory for it to work on both global projects and with air-light.
+**Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-kmd subfolders inside theme directory for it to work on both global projects and with air-kmd.

@@ -56,11 +56,11 @@
   @else if $grid-type == snappy {
     width: 100%;
 
-    @media (min-width: $container-ipad) {
+    @media (min-width: $container-tablet) {
       width: 700px;
     }
 
-    @media (min-width: $container-ipad-landscape) {
+    @media (min-width: $container-tablet-landscape) {
       width: 900px;
     }
 
@@ -73,7 +73,7 @@
     @include center($max_width: $grid-base-size, $pad: 0);
   }
 
-  @media (max-width: $container-ipad - 10px) {
+  @media (max-width: $container-tablet - 10px) {
     padding-top: $container-default-pad-y / 2;
     padding-bottom: $container-default-pad-y / 2;
   }

@@ -1,8 +1,7 @@
 // --------------------------------------------------------------
 // Theme options
 //
-// Start here!
-// This is the core file where most of the theme magic happens.
+// Variables
 // --------------------------------------------------------------
 
 // Colors
@@ -36,9 +35,76 @@ $container-default-pad-y: 6.4rem; // Default vertical padding for containers
 $grid-base-size: 960px; // Layout container max width on desktop. This is default .container size
 $article-max-width: 800px; // Max width for articles (see also $content_width in functions.php!)
 $container-mobile: 480px;
-$container-ipad: 770px;
-$container-ipad-landscape: 1024px;
+$container-tablet: 770px;
+$container-tablet-landscape: 1024px;
 $container-desktop: 1200px;
+
+// Grid settings
+$mobile-grid: (
+  columns: 12,
+  gutter: 10px,
+  media: $container-mobile,
+);
+
+$tablet-grid: (
+  columns: 12,
+  gutter: 10px,
+  media: $container-tablet,
+);
+
+$tablet-landscape-grid: (
+  columns: 12,
+  gutter: 10px,
+  media: $container-tablet-landscape,
+);
+
+$desktop-grid: (
+  columns: 12,
+  gutter: 10px,
+  media: $container-desktop,
+);
+
 
 // Where navigation transforms into responsive - scale your window width down to test
 $responsivenav: 960px;
+
+// Typography
+$base-font-family: $font-base;
+$heading-font-family: $font-headings;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$blue: #1565c0;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $blue;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: #fff;
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

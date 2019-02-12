@@ -1,8 +1,17 @@
-/*
-
-REQUIRED STUFF
-==============
-*/
+/* Implements:
+ *      1. Live reloads browser with BrowserSync.
+ *      2. CSS: Sass to CSS conversion, error catching, Autoprefixing, Sourcemaps,
+ *         CSS minification, and Merge Media Queries.
+ *      3. JS: Concatenates & uglifies Vendor and Custom JS files.
+ *      4. Images: Minifies PNG, JPEG, GIF and SVG images.
+ *      5. Watches files for changes in CSS or JS.
+ *      6. Watches files for changes in PHP.
+ *      7. Corrects the line endings.
+ *      8. InjectCSS instead of browser page reload.
+ *
+ * @author Mark Wilson§
+ * @version 1.0.0
+ */
 
 var gulp           = require('gulp');
 var sass           = require('gulp-sass');
@@ -78,7 +87,7 @@ gulp.task('browsersync', function() {
   ];
 
   browsersync.init(files, {
-    proxy: "airdev.test",
+    proxy: "sangerdev.test",
     browser: "Google Chrome",
     open: false,
     notify: true,
@@ -137,7 +146,7 @@ gulp.task('styles', function() {
     .pipe(sass({
       compass: false,
       bundleExec: true,
-      sourcemap: false,
+      sourcemap: true,
       style: 'compressed',
       debugInfo: true,
       lineNumbers: true,
@@ -199,7 +208,8 @@ gulp.task('styles', function() {
     // Process the expanded output with Stylefmt
     .pipe(stylefmt({ configFile: './.stylelintrc' }))
     .pipe(gulp.dest(cssDest))
-    .pipe(browsersync.stream());
+    .pipe(browsersync.stream())
+    .pipe( notify( { message: 'TASK: "styles" Completed! 💯', onLast: true } ) );
 
 });
 
@@ -364,27 +374,21 @@ gulp.task('js', function() {
 });
 
 /*
-
 WATCH
 =====
-
 */
 
 // Run the JS task followed by a reload
-gulp.task('js-watch', ['js'], browsersync.reload);
-gulp.task('watch', ['browsersync'], function() {
+gulp.task('js-watch', gulp.series(['js']), browsersync.reload);
 
-  gulp.watch(sassSrc, ['styles', 'scss-lint']).on( 'change', stylefmtfile );
-  gulp.watch(phpSrc, ['phpcs', 'validatehtml', 'a11y']);
-  gulp.watch(jsSrc, ['js-watch']);
-
+gulp.task('watch', gulp.series(['browsersync']), function() {
+  gulp.watch(sassSrc, gulp.series(['styles', 'scss-lint']).on( 'change', stylefmtfile ));
+  gulp.watch(phpSrc, gulp.series(['phpcs', 'validatehtml', 'a11y']));
+  gulp.watch(jsSrc, gulp.series(['js-watch']));
 });
 
 /*
-
 DEFAULT
 =====
-
 */
-
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.series(['watch']));

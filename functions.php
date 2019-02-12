@@ -2,7 +2,7 @@
 /**
  * The current version of the theme.
  *
- * @package air-light
+ * @package air-kmd
  */
 
 define( 'AIR_LIGHT_VERSION', '4.6.2' );
@@ -17,7 +17,10 @@ require get_theme_file_path( '/inc/nav-walker.php' );
 /**
  * Enable theme support for essential features.
  */
+
+// RSS Feeds
 add_theme_support( 'automatic-feed-links' );
+//This feature allows themes to add document title tag to HTML <head>
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
@@ -26,7 +29,7 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
 /**
  * Load textdomain.
  */
-load_theme_textdomain( 'air-light', get_template_directory() . '/languages' );
+load_theme_textdomain( 'air-kmd', get_template_directory() . '/languages' );
 
 /**
  * Define content width in articles
@@ -42,9 +45,9 @@ if ( ! isset( $content_width ) ) {
  */
 function _air_light_widgets_init() {
   register_sidebar( array(
-    'name'          => esc_html__( 'Sidebar', 'air-light' ),
+    'name'          => esc_html__( 'Sidebar', 'air-kmd' ),
     'id'            => 'sidebar-1',
-    'description'   => esc_html__( 'Add widgets here.', 'air-light' ),
+    'description'   => esc_html__( 'Add widgets here.', 'air-kmd' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h2 class="widget-title">',
@@ -84,8 +87,8 @@ function air_light_scripts() {
   }
 
   wp_localize_script( 'scripts', 'air_light_screenReaderText', array(
-    'expand'      => esc_html__( 'Open child menu', 'air-light' ),
-    'collapse'    => esc_html__( 'Close child menu', 'air-light' ),
+    'expand'      => esc_html__( 'Open child menu', 'air-kmd' ),
+    'collapse'    => esc_html__( 'Close child menu', 'air-kmd' ),
   ) );
 }
 add_action( 'wp_enqueue_scripts', 'air_light_scripts' );

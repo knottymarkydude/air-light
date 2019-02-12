@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package air-light
+ * @package air-kmd
  */
 
 get_header();

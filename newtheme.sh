@@ -19,7 +19,7 @@ read -p "${boldyellow}Project created? (y/n)${txtreset} " yn
     esac
 done
 
-echo "${boldwhite}Please note: This script is designed to work with dudestack and air-light. See https://github.com/digitoimistodude${txtreset} "
+echo "${boldwhite}Please note: This script is designed to work with dudestack and air-kmd. See https://github.com/digitoimistodude${txtreset} "
 echo "${boldyellow}Project name in lowercase:${txtreset} "
 read -e PROJECTNAME
 echo "${boldyellow}Theme name in lowercase (no spaces or special characters):${txtreset} "
@@ -40,9 +40,9 @@ echo "${yellow}Generating theme files with theme name and texdomain called ${THE
 cd $PROJECTTHEMEPATH && rm -rf .git
 
 # THE magical sed command by rolle (goes through every single file in theme folder and searchs and replaces every air instance with THEMENAME):
-for i in `grep -rl air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-light;${THEMENAME};" $i $i; done
-for i in `grep -rl Air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air-light;${THEMENAME};" $i $i; done
-for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-light;${THEMENAME};" $i $i; done
+for i in `grep -rl air-kmd * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-kmd;${THEMENAME};" $i $i; done
+for i in `grep -rl air-kmd * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-kmd;${THEMENAME};" $i $i; done
+for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-kmd;${THEMENAME};" $i $i; done
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air_light_;${THEMENAME}_;" $i $i; done
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air_light_;${THEMENAME}_;" $i $i; done
 
@@ -100,7 +100,7 @@ This project is hand made for customer. Customer basic details are here:
 
 ## Stack
 
-This project is built on [digitoimistodude/dudestack](https://github.com/digitoimistodude/dudestack), [digitoimistodude/air-light](https://github.com/digitoimistodude/air-light), [digitoimistodude/marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) or [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup), [digitoimistodude/devpackages](https://github.com/digitoimistodude/devpackages) which are documented at their corresponding locations. This is a guide on:
+This project is built on [digitoimistodude/dudestack](https://github.com/digitoimistodude/dudestack), [digitoimistodude/air-kmd](https://github.com/digitoimistodude/air-kmd), [digitoimistodude/marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) or [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup), [digitoimistodude/devpackages](https://github.com/digitoimistodude/devpackages) which are documented at their corresponding locations. This is a guide on:
 
 - How to setup the project initially
 - How to update the project dependencies
@@ -117,7 +117,7 @@ This project is built on [digitoimistodude/dudestack](https://github.com/digitoi
 
 ## Features
 
-On top of features included in [digitoimistodude/air-light](https://github.com/digitoimistodude/air-light), this project contains:
+On top of features included in [digitoimistodude/air-kmd](https://github.com/digitoimistodude/air-kmd), this project contains:
 
 - (Please fill)
 

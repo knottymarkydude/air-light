@@ -105,7 +105,7 @@ th {
   padding: 1rem;
 
   @media (max-width: 600px) {
-    @include stack();
+    //@include stack();
     display: inline-block;
     height: auto;
     padding: 10px 0;

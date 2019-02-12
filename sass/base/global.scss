@@ -1,15 +1,19 @@
 @charset 'utf-8';
 
-// Reset & grid
+// Reset
 @import 'normalize';
-@import 'jeet/scss/index';
 
-// Theme options
+// Theme Variables
 @import 'config';
 
 // Helpers
-@import 'helpers';
+@import 'helpers'; // Mixins
 @import 'accessibility';
+
+// Bourbon & Neat grid and bitters
+@import 'bourbon/bourbon';
+@import 'neat/_neat';
+@import 'bitters/_base';
 
 // Structure
 @import '../layout/general';

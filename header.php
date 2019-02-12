@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package air-light
+ * @package air-kmd
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class( 'no-js' );; ?>>
   <div id="page" class="site">
-   <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
+   <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-kmd' ); ?></a>
 
    <div class="nav-container">
     <header class="site-header" role="banner">
@@ -52,11 +52,11 @@
 
       <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-        <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
+        <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-kmd' ); ?>">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
-          <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
+          <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-kmd' ); ?>"><?php esc_attr_e( 'Menu', 'air-kmd' ); ?></span>
         </button>
 
         <nav id="nav" class="nav-primary" role="navigation">

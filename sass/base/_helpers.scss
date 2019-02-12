@@ -161,6 +161,256 @@
   }
 }
 
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+/// Usage: @include font-size(14px)
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+// Usage @include font-smoothing(on);
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+/*
+Transition
+
+$transition-property = the property you want to transition, use all for everything
+$transition-time = seconds you want the transition to last
+$method = how you want it to transition - e.g. ease-in-out
+
+Methods
+linear: the transition will have constant speed from start to end.
+ease: the transition will start slowly, then get faster, before ending slowly.
+ease-in: the transition will start slowly.
+ease-out: the transition will end slowly.
+ease-in-out: the transition starts and ends slowly.
+cubic-bezier: define specific values for your own transition.
+
+
+default value : ease
+
+Usage example;
+-------------
+.item {
+    @include transition(padding, 1s, ease-in-out);
+}
+*/
+@mixin transition($transition-property, $transition-time, $method : ease) {
+        -webkit-transition: $transition-property $transition-time $method;
+        -moz-transition: $transition-property $transition-time $method;
+        -ms-transition: $transition-property $transition-time $method;
+        -o-transition: $transition-property $transition-time $method;
+        transition: $transition-property $transition-time $method;
+}
+
+/*
+Radius
+
+Usage example;
+---------------
+.item {
+    @include radius(20px);
+}
+*/
+@mixin radius ($radius-size) {
+    -webkit-border-radius: $radius-size;
+    -moz-border-radius: $radius-size;
+    border-radius: $radius-size;
+}
+
+/*
+Box-shadow
+Usage example;
+---------------
+.item {
+    @include box-shadow(0, 1px, 3px, rgba(0, 0, 0, 0.15), true);
+}
+
+sets
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+
+Set inset = true if you want the shadow inset in the item.
+*/
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:$top $left $blur $color inset;
+        -moz-box-shadow:$top $left $blur $color inset;
+        box-shadow:$top $left $blur $color inset;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+// Assuming the parent element has position: relative;, these four
+// properties will center a child element both horizontally and vertically inside
+//  @include centerer();
+//
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Flexbox
+
+// --------------------------------------------------
+// Flexbox SASS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// --------------------------------------------------
+
+// Flexbox display
+//  @include flexbox();
+//
+@mixin flexbox() {
+//  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+//  @include flex(1 1 auto);
+@mixin flex($values) {
+//  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+  	  -ms-flex: $values;
+  	      flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+     -moz-flex-direction: $direction;
+      -ms-flex-direction: $direction;
+          flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+  -webkit-flex-wrap: $wrap;
+     -moz-flex-wrap: $wrap;
+      -ms-flex-wrap: $wrap;
+          flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+     -moz-box-ordinal-group: $val;
+  	     -ms-flex-order: $val;
+  	      -webkit-order: $val;
+  		      order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+  -webkit-flex-grow: $grow;
+     -moz-flex-grow: $grow;
+      -ms-flex-grow: $grow;
+          flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+@mixin flex-shrink($shrink) {
+  -webkit-flex-shrink: $shrink;
+     -moz-flex-shrink: $shrink;
+      -ms-flex-shrink: $shrink;
+          flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+     -moz-flex-basis: $width;
+      -ms-flex-basis: $width;
+          flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+@mixin align-content($align) {
+  -webkit-align-content: $align;
+     -moz-align-content: $align;
+      -ms-align-content: $align;
+          align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+     -moz-align-items: $align;
+      -ms-align-items: $align;
+          align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+@mixin align-self($align) {
+  -webkit-align-self: $align;
+     -moz-align-self: $align;
+      -ms-align-self: $align;
+          align-self: $align;
+}
+
 // A natural box layout model to all elements
 // Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html,

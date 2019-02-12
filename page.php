@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package air-light
+ * @package air-kmd
  */
 
 get_header();
@@ -32,7 +32,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
             <?php the_content();
 
               wp_link_pages( array(
-                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ),
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-kmd' ),
                 'after'  => '</div>',
               ) );
             ?>
@@ -44,7 +44,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
                 sprintf(
                   /* translators: %s: Name of current post. Only visible to screen readers */
                   wp_kses(
-                    __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
+                    __( 'Edit <span class="screen-reader-text">%s</span>', 'air-kmd' ),
                     array(
                       'span' => array(
                         'class' => array(),

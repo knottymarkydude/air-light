@@ -1,7 +1,7 @@
-=== air-light ===
+=== air-kmd ===
 
-Air-light WordPress Theme, Copyright 2018 Digitoimisto Dude Oy, Roni Laukkarinen
-Air-light is distributed under the terms of the MIT License
+air-kmd WordPress Theme, Copyright 2018 Digitoimisto Dude Oy, Roni Laukkarinen
+air-kmd is distributed under the terms of the MIT License
 
 Bundled header image, Copyright Sarah Dorweiler
 License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
@@ -16,7 +16,7 @@ Stable tag: 4.6.2
 License: MIT License
 License URI: https://opensource.org/licenses/MIT
 
-A starter theme called air-light.
+A starter theme called air-kmd.
 
 == Description ==
 
@@ -28,7 +28,7 @@ Air starter theme is built to be very straightforward, front end developer frien
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-Or just get from GitHub: https://github.com/digitoimistodude/air-light
+Or just get from GitHub: https://github.com/digitoimistodude/air-kmd
 
 == Frequently Asked Questions ==
 

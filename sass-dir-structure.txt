@@ -1,0 +1,45 @@
+base
+	bitters (bitters)
+		_base
+		_buttons
+		_forms (Not needed)
+		_layout (Basic HTML)
+		_lists
+		_media
+		_tables
+		_typography (Not needed)
+		_variables
+	bourbon
+		_bourbon
+	neat
+		_neat
+	accessibility
+	_config (Variables)
+	_helpers (Mixins)
+	_normalize
+	_global (Main file)
+extra
+	_slick  (Support for Slick slider)
+	_sticky-nav
+features
+	_breadcrumbs
+	_gallery
+	_magnific-popup
+	_top (Back to top)
+layout
+	_forms
+	_general
+	_sidebar
+	_site-footer
+	_site-header
+	_woocommerce
+navigation
+	_burger
+	_nav-core
+	_nav-desktop
+	_nav-mobile
+views
+	_blog
+	_comments
+	_front-page
+	_page

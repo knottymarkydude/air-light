@@ -5,7 +5,7 @@
  * This is the default hero image for page templates, called
  * 'block'. Strictly air specific.
  *
- * @package air-light
+ * @package air-kmd
  */
 
 // Block settings
@@ -19,7 +19,7 @@ endif;
 if ( has_post_thumbnail() ) :
 	$featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 else :
-	$featured_image = get_theme_file_uri( 'images/default.jpg' );
+	$featured_image = get_theme_file_uri( 'images/default1.jpg' );
 endif;
 ?>
 
